@@ -1,28 +1,23 @@
-package ZeynepDinc.EvamSoftware;
+package Test;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
+
+import ZeynepDinc.EvamSoftware.Base;
 
 public class EvamSoftware extends Base {
-
-	@Before
-	public void setUp() throws Exception {
-		// Ön Ayarlar. Bu kısımda ben kendi bilgisayarımda google chrome'un 77. sürümünü
-		// kullandığım için onda çalıştım. İsterseniz ek olarak uygulamada 78 ve 75.
-		// sürümlerde bulunmaktadır.
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\chromedriver77.exe");
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-	}
 
 	@Test
 	public void test() {
 		try {
+			// Ön Ayarlar. Bu kısımda ben kendi bilgisayarımda google chrome'un 77. sürümünü
+			// kullandığım için onda çalıştım. İsterseniz ek olarak uygulamada 78 ve 75.
+			// sürümlerde bulunmaktadır.
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\chromedriver77.exe");
+			driver = new ChromeDriver();
+			driver.manage().window().maximize();
 			driver.get("https://evam.com");
 			beklemeSuresi(5000);
 			// Sayfa Açıldı
@@ -47,7 +42,7 @@ public class EvamSoftware extends Base {
 			// durumunu ayrıştırdım. Tab tuşuna basılarak boşluk bırakılması istenmiş
 			// okunmayı kolaylaştırmak adına fakat tab tuşu boşluk bırakmıyor. Normal boşluk
 			// bırakmakta yazdırdığımda okunma açısından görsel olarak sorun oluyordu.Onun
-			// için insiyatif alarak çift enter kullandım. 
+			// için insiyatif alarak çift enter kullandım.
 			String copyText[] = new String[4];
 			for (int i = 0; i < 4; i++) {
 				// p xpath
