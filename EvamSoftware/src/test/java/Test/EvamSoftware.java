@@ -29,7 +29,7 @@ public class EvamSoftware extends Base {
 			// En sona adres kısmı bırakılır.
 			xPathSendKey(getNameTxt(), "Zeynep DİNÇ");
 			beklemeSuresi(3000);
-			xPathSendKey(getNumberTxt(), "05546797494");
+			xPathSendKey(getNumberTxt(), "05*******4");
 			beklemeSuresi(3000);
 			xPathSendKey(getEmailTxt(), "zeynepdinc.23@gmail.com");
 			beklemeSuresi(3000);
